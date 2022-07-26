@@ -49,7 +49,7 @@ public class guiMain extends JFrame{
 		
 		
 		// button:
-		ImageIcon icon = new ImageIcon("/home/husam/eclipse-workspace/ip-max/src/main/resources/globe.png");
+		ImageIcon icon = new ImageIcon(getClass().getResource("/globe.png"));
 		button = new JButton();
 		button.setIcon(icon);
 		button.addActionListener(new lookup());
@@ -59,11 +59,13 @@ public class guiMain extends JFrame{
         textArea.setText("Results:\n\n");
         textArea.setEditable(false);
         textArea.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(EtchedBorder.RAISED), "IP Information:",TitledBorder.RIGHT, TitledBorder.TOP));
-        textArea.setBackground(Color.WHITE);	
+        textArea.setBackground(Color.WHITE);
+        
+        scrollPane = new JScrollPane(textArea, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		
 		tf = new JTextField(12);
 		
-		panel1.add(textArea);
+		panel1.add(scrollPane);
 		panel2.add(tf);
 		panel2.add(button);
         
@@ -98,7 +100,10 @@ public class guiMain extends JFrame{
 			try {
 				webRequests request = new webRequests(ip);
 				ipObject object = request.CreateObject();
-				textArea.setText(object.GetObjectValue());
+				String text  = object.GetObjectValue();
+				textArea.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 20));
+				textArea.setText(text);
+				System.out.println(object.GetObjectValue());
 			
 			
 			} catch (IOException e1) {
