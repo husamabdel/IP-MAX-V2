@@ -440,39 +440,37 @@ public class ipObject {
 
 
 
-
+	//"<html><font color=\"red\">"+country+"</font></html>"
 
 	public String GetObjectValue() {
 		
-		String vals =
-				
-				
-				 ip+"\n"+                   
-				 version+              
-				 city       +          "\n"+   
-				 region      +         "\n"+   
-				 region_code  +        "\n"+   
-				 country       +       "\n"+   
-				 country_name   +      "\n"+   
-				 country_code    +     "\n"+   
-				 country_code_iso3+    "\n"+   
-				 country_capital   +   "\n"+   
-				 country_tld        +  "\n"+   
-				 continent_code      + "\n"+   
-				 in_eu                +"\n"+   
-				 postal               +"\n"+
-				 latitude             +"\n"+   
-				 longitude            +"\n"+   
-				 timezone             +"\n"+   
-				 utc_offset           +"\n"+   
-				 country_calling_code +"\n"+   
-				 currency             +"\n"+   
-				 currency_name      +"\n"+   
-				 languages           +"\n"+   
-				 country_area        +"\n"+   
-				 country_population   +"\n"+   
-				 asn                  +"\n"+   
-				 org                  
+		String vals =			
+"Ip Address:              "+                 ip                   +"\n"+ 
+"Ip Version:              "+				 version               +"\n"+         
+"City:                    "+				 city       +          "\n"+   
+"Region:                  "+				 region      +         "\n"+   
+"Region Code:             "+				 region_code  +        "\n"+   
+"Country:                 "+				 country       +       "\n"+   
+"Country Name:            "+				 country_name   +      "\n"+   
+"Country Code:            "+				 country_code    +     "\n"+   
+"Country Code ISO:        "+				 country_code_iso3+    "\n"+   
+"Country Capital:         "+				 country_capital   +   "\n"+   
+"Country TLD:             "+				 country_tld        +  "\n"+   
+"Continent Code:          "+				 continent_code      + "\n"+   
+"In EU?:                  "+				 in_eu                +"\n"+   
+"Postal:                  "+				 postal               +"\n"+
+"Latitude:                "+				 latitude             +"\n"+   
+"longitude:               "+				 longitude            +"\n"+   
+"Timezone:                "+				 timezone             +"\n"+   
+"UTC Offset:              "+				 utc_offset           +"\n"+   
+"Country Calling Code:    "+				 country_calling_code +"\n"+   
+"Country currency:        "+				 currency             +"\n"+   
+"Currency Name:           "+				 currency_name      +"\n"+   
+"Languages:               "+				 languages           +"\n"+   
+"Country Area:            "+				 country_area        +"\n"+   
+"Country Population:      "+				 country_population   +"\n"+   
+"IP ASN:                  "+				 asn                  +"\n"+   
+"Organization:            "+				 org                  
 				
 				
 				; return vals;

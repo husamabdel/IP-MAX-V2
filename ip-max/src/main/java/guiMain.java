@@ -1,3 +1,5 @@
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
 import javax.swing.*;
@@ -30,13 +32,27 @@ public class guiMain extends JFrame{
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setPanel1();
 		this.add(pane);
+		setMenuBar();
+		this.setJMenuBar(bar);
+		ImageIcon appIcon = new ImageIcon(getClass().getResource("/globe.png"));
+		this.setIconImage(appIcon.getImage());
 		this.setVisible(true);
 		
 	}
 	
 	public void setMenuBar() {
 		
+	
+		bar = new JMenuBar();
+		JMenu menu = new JMenu("File");
+		JMenuItem item1 = new JMenuItem("Export results");
+		item1.addActionListener(new export());
+		JMenuItem item2 = new JMenuItem("exit");
+		item2.addActionListener(new exit());
 		
+		menu.add(item1);
+		menu.add(item2);
+		bar.add(menu);
 		
 	}
 	
@@ -53,6 +69,7 @@ public class guiMain extends JFrame{
 		button = new JButton();
 		button.setIcon(icon);
 		button.addActionListener(new lookup());
+		button.setBackground(Color.WHITE);
 		// Action Listener goes here:
 		
         textArea = new JTextArea(30,60);
@@ -119,6 +136,50 @@ public class guiMain extends JFrame{
 			}
 		}
 	}
+
+
+
+
+	private class export implements ActionListener{
+
+		public void actionPerformed(ActionEvent e){
+
+			String username = System.getProperty("user.name");
+			String directory = "C:/Users/"+username+"Documents";
+
+			JOptionPane.showMessageDialog(null, "Select the destination folder then name your file!", "Information", JOptionPane.INFORMATION_MESSAGE);
+
+			String sb = textArea.getText();
+			JFileChooser chooser = new JFileChooser();
+			chooser.setCurrentDirectory(new File(directory));
+			int retrival = chooser.showSaveDialog(null);
+			if (retrival == JFileChooser.APPROVE_OPTION) {
+				try {
+					FileWriter fw = new FileWriter(chooser.getSelectedFile());
+					fw.write(sb.toString());
+					fw.close();
+				} catch (Exception ex) {
+					ex.printStackTrace();
+				}
+			}
+
+
+		}
+
+	}
+
+	private class exit implements ActionListener{
+
+
+		public void actionPerformed(ActionEvent e){
+
+			System.exit(0);
+
+		}
+
+
+	}
+
 	
 	
 	public static void main(String []args) {
