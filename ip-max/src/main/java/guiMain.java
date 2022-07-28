@@ -36,6 +36,7 @@ public class guiMain extends JFrame{
 		this.setJMenuBar(bar);
 		ImageIcon appIcon = new ImageIcon(getClass().getResource("/globe.png"));
 		this.setIconImage(appIcon.getImage());
+		this.setResizable(false);
 		this.setVisible(true);
 		
 	}
