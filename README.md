@@ -5,3 +5,5 @@ IP investigation tool to get geolocation, ISP and ASN of an IP address among oth
 CURRENTLY STILL UNDER DEVELOPMENT.
 To use the beta version you will need maven and latest JDK installed.
 You will need to create the project using maven or run it in an IDE of your choice, one that has good Maven and Java support like Eclipse, VSCode, or IntelliJ.
+
+This project is made possible thanks to https://ipapi.co/ for the free API end points, please consider checking out their API to support their project and build cool stuff like this.
